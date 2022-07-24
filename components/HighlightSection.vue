@@ -2,8 +2,51 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-x-12 -mb-8">
         <div v-for="(ai, index) in newAmenities" :key="index" class="highlight group">
             <div class="highlight-icon relative z-10 flex overflow-hidden items-center justify-center w-[85px] h-[85px] transition-all duration-500 text-primary rounded-[50%] bg-primary bg-opacity-[0.05] before:content-[''] before:absolute before:-z-10 before:top-0 before:right-0 before:bottom-0 before:left-0 before:transition-all before:duration-500 before:transform before:opacity-0 before:ruonded-[50%] before:bg-primary group-hover:before:transform group-hover:before:opacity-100 group-hover:before:rounded-full group-hover:text-white">
-                <i class="text-[40px] leading-[1] flex" ></i>
-                <!-- <img src="https://img.icons8.com/external-bartama-outline-64-bartama-graphic/2x/external-Drawer-furniture-and-home-decoration-outline-bartama-outline-64-bartama-graphic.png" alt=""> -->
+                <span :class="
+                    ai.value == 'Amueblado' ? 'text-[40px] icon-armchair' : 
+                    ai.value == 'Aire_acondicionado' ? 'text-[40px] icon-air-conditioner' : 
+                    ai.value == 'Mini_split' ? 'text-[40px] icon-aire' : 
+                    ai.value == 'Sala' ? 'text-[40px] icon-living-room' : 
+                    ai.value == 'Cuarto_con_television' ? 'text-[40px] icon-television' : 
+                    ai.value == 'Cuarto_de_lavado' ? 'text-[40px] icon-washing-machine' : 
+                    ai.value == 'Cocina' ? 'text-[40px] icon-kitchen' : 
+                    ai.value == 'Casa_inteligente' ? 'text-[40px] icon-smart-home' : 
+                    ai.value == 'Lavadero' ? 'text-[40px] icon-washing-machine' : 
+                    ai.value == 'Comedor' ? 'text-[40px] icon-mesa' : 
+                    ai.value == 'Lavavajillas' ? 'text-[40px] icon-lavavajillas' : 
+                    ai.value == 'Ventilacion' ? 'text-[40px] icon-ventilacion' : 
+                    ai.value == 'Estacionamiento_interior' ? 'text-[40px] icon-garage' : 
+                    ai.value == 'Balcon' ? 'text-[40px] icon-balcon' : 
+                    ai.value == 'Terraza' ? 'text-[40px] icon-terraza' : 
+                    ai.value == 'Jardin' ? 'text-[40px] icon-jardin' : 
+                    ai.value == 'Piscina' ? 'text-[40px] icon-piscina' : 
+                    ai.value == 'Ascensor' ? 'text-[40px] icon-elevator' : 
+                    ai.value == 'Cajon_Exterior' ? 'text-[40px] icon-persianas' : 
+                    ai.value == 'BBq' ? 'text-[40px] icon-grill' : 
+                    ai.value == 'Bar' ? 'text-[40px] icon-cocktail' : 
+                    ai.value == 'Gym' ? 'text-[40px] icon-weightlifter' : 
+                    ai.value == 'Muelle' ? 'text-[40px] icon-muelle' : 
+                    ai.value == 'Cortina_anticiclonica' ? 'text-[40px] icon-cyclone' : 
+                    ai.value == 'Zona_de_maniobras' ? 'text-[40px] icon-trasvolar' : 
+                    ai.value == 'Area_de_descargo' ? 'text-[40px] icon-discharge' : 
+                    ai.value == 'Stand' ? 'text-[40px] icon-food-stand' : 
+                    ai.value == 'Cortina_de_metal' ? 'text-[40px] icon-blinds' : 
+                    ai.value == 'Congelador' ? 'text-[40px] icon-freezer' : 
+                    ai.value == 'Estacionamiento_exterior' ? 'text-[40px] icon-parking-area' : 
+                    ai.value == 'Cisterna' ? 'text-[40px] icon-water-tank' : 
+                    ai.value == 'Circuito cerrado' ? 'text-[40px] icon-cityscape' : 
+                    ai.value == 'Mantenimiento' ? 'text-[40px] icon-technician' : 
+                    ai.value == 'CCTV' ? 'text-[40px] icon-cctv' : 
+                    ai.value == 'Petfrendly' ? 'text-[40px] icon-pet-friendly' : 
+                    ai.value == 'Luz' ? 'text-[40px] icon-street-light' : 
+                    ai.value == 'Agua' ? 'text-[40px] icon-grifo-de-agua' : 
+                    ai.value == 'Gas' ? 'text-[40px] icon-gas' : 
+                    ai.value == 'Wifi' ? 'text-[40px] icon-wifi' : 
+                    ai.value == 'Drenaje' ? 'text-[40px] icon-discharge' : 
+                    ai.value == 'Alumbrado público' ? 'text-[40px] icon-street-light' : '' 
+                ">
+
+                </span>
             </div>
             <div class="highlight-content">
                 <h3 class="highlight_title text-[30px] md:text-5xl font-bold relative block mb-1 text-primary">
