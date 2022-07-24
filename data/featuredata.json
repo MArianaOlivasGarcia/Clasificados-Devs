@@ -1,0 +1,47 @@
+[
+    {
+        "icoClass": "fi fi-phone-call",
+        "title": "Reception",
+        "text": "6 area for receptionist serve 24/7"
+    },
+    {
+        "icoClass": "fi fi-line-1",
+        "title": "Conditioning",
+        "text": "Ensure ventilation and air circulation in your home with center air conditioning system"
+    },
+    {
+        "icoClass": "fi fi-shield",
+        "title": "Security",
+        "text": "Security team with 24/7 camera system"
+    },
+    {
+        "icoClass": "fi fi-shopping-cart",
+        "title": "Supermarket",
+        "text": "5 Supermarkets setup in each block"
+    },
+    {
+        "icoClass": "fi fi-notification",
+        "title": "Fire Alarm",
+        "text": "Automatic fire extinguishing system in each apartment"
+    },
+    {
+        "icoClass": "fi fi-spa",
+        "title": "Spa and Massage",
+        "text": "Take care your health with Spa & Massage services"
+    },
+    {
+        "icoClass": "fi fi-car-park",
+        "title": "Parking",
+        "text": "The parking area with the capacity more than 20,000 slots car parking,"
+    },
+    {
+        "icoClass": "fi fi-water-waves",
+        "title": "4 Seasons Pool",
+        "text": "5-star indoor 4-season swimming pool system"
+    },
+    {
+        "icoClass": "fi fi-conference",
+        "title": "Conference Room",
+        "text": "5 Conference rooms setup in each block"
+    }
+]

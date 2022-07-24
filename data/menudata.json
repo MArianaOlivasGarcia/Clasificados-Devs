@@ -1,0 +1,37 @@
+[
+    {
+        "url": "https://clasificadoscontacto.com/",
+        "name": "Inicio"
+       
+    },
+    {
+        "url": "#",
+        "name": "Categorías",
+        "submenu":[
+            {
+                "url": "https://clasificadoscontacto.com/bienesraices",
+                "name": "Inmuebles"
+            },
+            {
+                "url": "https://clasificadoscontacto.com/desarrollos",
+                "name": "Desarrollos"
+            },
+            {
+                "url": "https://clasificadoscontacto.com/vehiculos",
+                "name": "Vehículos"
+            }
+        ]
+    },
+    {
+        "url": "https://clasificadoscontacto.com/registro.html",
+        "name":"Registrate"
+    },
+    {
+        "url": "https://clasificadoscontacto.com/sesion.html",
+        "name":"Iniciar sesión"
+    },
+    {
+        "url": "https://clasificadoscontacto.com/#contacto",
+        "name":"Contacto"
+    }
+]
