@@ -262,10 +262,12 @@ export default {
 </script>
 <style lang='scss' scoped>
 .is-sticky {
-    @apply bg-black transition-all shadow-[2px_4px_8px_rgba(52,58,64,0.15)] fixed z-9999;
+    @apply transition-all shadow-[2px_4px_8px_rgba(52,58,64,0.15)] fixed z-9999;
 
     & .border-class {
         @apply hidden;
     }
+
+    background: #01569F;
 }
 </style>
