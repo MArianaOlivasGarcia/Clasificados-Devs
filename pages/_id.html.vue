@@ -125,12 +125,15 @@
         <!-- Testimonial Section End -->
 
 
+        <client-only>
+
         <GoogleMap 
                 style="width: 100%; height: 250px" 
                 :mapLat="dev.latitude" 
                 :mapLng="dev.longitude" 
                 :draggable="false"
                 :scaleControl="false"/>
+        </client-only>
 
 
         <!-- Location State Section Start -->
@@ -156,7 +159,7 @@
                     <span class="text-sm leading-[1.714] block uppercase text-primary">Contacto</span>
                     <!-- <h2 class="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase text-black"> <a href='tel:+014956372970'>+014 956 372 970</a> </h2> -->
                 </div>
-                <HomeTwoContact/>
+                <HomeTwoContact />
                 <!-- <div class="section-padding pb-0"> -->
                     <!-- Agent Start -->
                     <!-- <div class="agent text-center">

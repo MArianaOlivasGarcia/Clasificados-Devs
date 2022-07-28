@@ -56,6 +56,7 @@ export default {
       src: '~/plugins/vue-backtotop.js',
       ssr: false
     },
+    { src: '~/plugins/vue-vuelidate'},
     { src: '~/plugins/vue-googlemaps', ssr: false},
 
   ],
