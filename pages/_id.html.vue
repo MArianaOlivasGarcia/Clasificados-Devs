@@ -159,7 +159,7 @@
                     <span class="text-sm leading-[1.714] block uppercase text-primary">Contacto</span>
                     <!-- <h2 class="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase text-black"> <a href='tel:+014956372970'>+014 956 372 970</a> </h2> -->
                 </div>
-                <HomeTwoContact />
+                <HomeTwoContact :v="$v" :form="form" :dev="dev" />
                 <!-- <div class="section-padding pb-0"> -->
                     <!-- Agent Start -->
                     <!-- <div class="agent text-center">
@@ -186,6 +186,10 @@
 </template>
 
 <script>
+
+import { required, email } from 'vuelidate/lib/validators' 
+
+
 export default {
     async asyncData ({ params, store }) {
 
@@ -217,6 +221,23 @@ export default {
         ] 
       } 
     },
+    validations: {
+      form: {
+          name: {
+              required,
+          },
+          email: {
+              required,
+              email,
+          },
+          phone: {
+              required,
+          },
+          message: {
+              required,
+          },
+        }
+    },
     components: {
         Logo: () => import('@/components/logo/Logo'),
         MainMenu: () => import('@/components/header/MainMenu'),
@@ -237,7 +258,13 @@ export default {
     data () {
         return {
             isSticky: false,
-            navOpen: false
+            navOpen: false,
+            form: {
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
+            },
         }
     },
     methods: {
