@@ -6,7 +6,7 @@
             <div class="container-fluid mx-auto">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
-                        <Logo :dev="dev" class="sm:max-w-[180px] max-w-[150px] mr-20 2xl:mr-[180px] py-[20px]" logLink="/"/>
+                        <Logo class="sm:max-w-[180px] max-w-[150px] mr-20 2xl:mr-[180px] py-[20px]" logLink="/"/>
                         <MainMenu :textClass="'text-white sticky-height'" />
                     </div>
                     <div class="flex items-center">

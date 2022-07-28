@@ -9,10 +9,7 @@
     export default {
         props: {
             logLink: String,
-            dev: {
-                type: Object,
-                required: true
-            }
+           
         }
     }
 </script>
