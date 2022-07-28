@@ -83,7 +83,7 @@ export default {
         }
     },
     methods: { 
-        send() {
+        async send() {
 
             if ( this.v.form.$invalid ) {
                 this.v.form.$touch()
@@ -98,12 +98,22 @@ export default {
             }
 
             console.log(data)
-            //   const success = await this.$store.dispatch('sendMain', data)
+            const success = await this.$store.dispatch('contact', data)
 
+           if ( !success ){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops',
+                text: `No se pudo enviar el mensaje.`
+            })
+           } 
+
+           const { name } = success
+    
 
             Swal.fire({
                 title: 'Mensaje enviado con éxito.',
-                text: 'Tu mensaje le ha sido entregado a tu asesor inmobiliario.',
+                text: `${ name }, tu mensaje le ha sido entregado a tu asesor inmobiliario.`,
                 icon: 'success'
             });
 
