@@ -23,7 +23,7 @@
                             <ButtonDefault 
                                 :btnLink="'/contact'"
                                 :btnClass="'min-h-[50px] md:min-h-[60px] lg:min-h-[70px] py-2 sm:py-5 btn relative overflow-hidden h-[54px] lg:h-[60px] px-[30px] lg:px-[40px] text-base sm:text-[18px] font-bold btn-primary flex items-center justify-center btn-hover-light w-full'"
-                                :btnText="'Contactar'"
+                                :btnText="'Solicitar disponibilidad'"
                                 :btnIcon="'!hidden'"
                                 :btnClassParent="'block leading-[1] text-center'"
                             />
