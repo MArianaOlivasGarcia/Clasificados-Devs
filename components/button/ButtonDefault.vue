@@ -36,10 +36,10 @@ export default {
         @apply border-[1px] border-black bg-transparent text-black;
     }
     .btn-hover-primary {
-        @apply hover:border-[#01569d] hover:text-white before:bg-[#01569d] hover:transition-all hover:duration-700;
+        @apply hover:border-[#f2b500] hover:text-white before:bg-[#f2b500] hover:transition-all hover:duration-700;
     }
     .btn-primary {
-        @apply bg-[#01569d];
+        @apply bg-[#f2b500];
     }
     .btn-light {
         @apply bg-white;
@@ -48,9 +48,9 @@ export default {
         @apply bg-transparent;
     }
     .btn-hover-dark {
-        @apply hover:border-[#221F1E] text-white before:bg-[#221F1E];
+        @apply hover:border-[#221F1E] text-black before:bg-[#fff];
     }
     .btn-hover-light {
-        @apply hover:border-[#221F1E] text-white before:bg-white;
+        @apply hover:border-[#221F1E] text-black before:bg-white;
     }
 </style>

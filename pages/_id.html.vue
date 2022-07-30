@@ -3,7 +3,7 @@
 
         <!-- Header Section Start -->
         <div class="absolute top-0 left-0 right-0 z-[999]" :class="{'is-sticky': isSticky}">
-            <div class="container-fluid mx-auto">
+            <div class="container-fluid mx-auto" style="background-color: #01569f;">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center">
                         <Logo class="sm:max-w-[180px] max-w-[150px] mr-20 2xl:mr-[180px] py-[20px]" logLink="/"/>
@@ -54,7 +54,42 @@
         </div>
         <!-- About Section End -->
 
-        <!-- Highlight Section Start -->
+        <!-- PROTOTIPOS START -->
+        <div class="bg-[#f5f1ef]">
+            <div class="container-fluid">
+                <div class="section-padding pb-[60px] lg:pb-[100px]">
+                    <!-- Section Title Start -->
+                    <SectionTitle
+                        secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
+                        subTitle="DESCRUBRE"
+                        title="PROTOTIPOS"
+                        titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
+                    />
+                    <!-- Section Title End -->
+                    <TabStyleTwo :prototypes="dev.prototipos"/>
+                </div>
+            </div>
+        </div>
+        <!-- PROTOTIPOS END -->
+
+
+        <!-- Galeria Start -->
+        <div class="container-fluid">
+            <div class="section-padding border-b-1 border-bordercolor">
+                <!-- Section Title Start -->
+                <SectionTitle
+                    secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
+                    subTitle="Fotos y Videos"
+                    :title="dev.name + ' Album'"
+                    titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
+                />
+                <!-- Section Title End -->
+                <GallerySliderMain/>
+            </div>
+        </div>
+        <!-- Galeria End -->
+
+        <!--Amenidades Start -->
         <div class="w-full">
             <div class="container-fluid">
                 <div class="section-padding">
@@ -74,41 +109,11 @@
             </div>
             <img class="w-auto max-w-full h-auto max-h-full" src="/images/shapes/home-2-feature-house.jpg" alt="Feature-Home-Image">
         </div>
-        <!-- Highlight Section End -->
+        <!--Amenidades End -->
 
-        <!-- Floor Plan Section Start -->
-        <div class="bg-[#f5f1ef]">
-            <div class="container-fluid">
-                <div class="section-padding pb-[60px] lg:pb-[100px]">
-                    <!-- Section Title Start -->
-                    <SectionTitle
-                        secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
-                        subTitle="DESCRUBRE"
-                        title="PROTOTIPOS"
-                        titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
-                    />
-                    <!-- Section Title End -->
-                    <TabStyleTwo :prototypes="dev.prototipos"/>
-                </div>
-            </div>
-        </div>
-        <!-- Floor Plan Section End -->
+        
 
-        <!-- Gallery Section Start -->
-        <div class="container-fluid">
-            <div class="section-padding border-b-1 border-bordercolor">
-                <!-- Section Title Start -->
-                <SectionTitle
-                    secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
-                    subTitle="Fotos y Videos"
-                    :title="dev.name + ' Album'"
-                    titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
-                />
-                <!-- Section Title End -->
-                <GallerySliderMain/>
-            </div>
-        </div>
-        <!-- Gallery Section End -->
+        
 
         <!-- Testimonial Section Start -->
         <!-- <div class="container-fluid">
@@ -125,15 +130,7 @@
         <!-- Testimonial Section End -->
 
 
-        <client-only>
-
-        <GoogleMap 
-                style="width: 100%; height: 250px" 
-                :mapLat="dev.latitude" 
-                :mapLng="dev.longitude" 
-                :draggable="false"
-                :scaleControl="false"/>
-        </client-only>
+        
 
 
         <!-- Location State Section Start -->
@@ -152,11 +149,11 @@
         </div> -->
         <!-- Location State Section End -->
 
-        <!-- Home Two Contact Section Start -->
+        <!--  Contact Section Start -->
         <div class="container-fluid">
             <div class="section-padding">
                 <div class="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center">
-                    <span class="text-sm leading-[1.714] block uppercase text-primary">Contacto</span>
+                    <span class="text-sm leading-[1.714] block uppercase text-primary">Solicitar disponibilidad</span>
                     <!-- <h2 class="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase text-black"> <a href='tel:+014956372970'>+014 956 372 970</a> </h2> -->
                 </div>
                 <HomeTwoContact :v="$v" :form="form" :dev="dev" />
@@ -176,7 +173,23 @@
                 <!-- </div> -->
             </div>
         </div>
-        <!-- Home Two Contact Section End -->
+        <!-- Contact Section End -->
+
+
+        <!-- Mapa Start -->
+        <client-only>
+            <div style="idth: 100%; height: 400px; position: relative;">
+                <GoogleMap 
+                    style="width: 100%; height: 400px position: absolute;" 
+                    :mapLat="dev.latitude" 
+                    :mapLng="dev.longitude" 
+                    :draggable="false"
+                    :scaleControl="false"/>
+                    <div style="width: 100%; height: 400px; position: absolute; background: rgba(0,0,0,0.5); top:0;" ></div>
+            </div>
+
+        </client-only>
+        <!-- Mapa End -->
 
         <!-- Footer Section Start -->
         <FooterSectionTwo/>

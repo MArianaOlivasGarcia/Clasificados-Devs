@@ -67,7 +67,7 @@
         }
     }
     &-title {
-        @apply font-normal leading-[.85] uppercase text-white text-[70px] sm:text-[110px] md:text-[140px] lg:text-[110px] xl:text-[140px] 2xl:text-[180px] font-play mb-0;
+        @apply font-normal leading-[.85] uppercase text-white text-[70px] sm:text-[110px] md:text-[140px] lg:text-[110px] xl:text-[140px] 2xl:text-[180px]  mb-0;
     }
     &-signature{
         @apply block max-w-[220px] sm:max-w-[290px] xl:max-w-full;

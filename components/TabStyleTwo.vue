@@ -3,7 +3,7 @@
 
         <ul class="flex flex-wrap mb-7 md:mb-10 lg:mb-12 gap-x-0 gap-y-5">
             <li class="md:flex-1 flex-[1_0_45%] relative" v-for="(item, index) in prototypes" :key="index" :class="[index === active ? 'trigger-active' : '']" @click='activate(index)'>
-                <button class="xl:text-2xl lg:text-xl sm:text-lg text-sm font-bold relative flex justify-center w-full px-[10px] pb-5 xl:pb-7 cursor-pointer uppercase text-black border-b-[3px] border-[#D0CDCB] bg-transparent before:absolute before:z-10 before:right-0 before:-bottom-[3px] before:left-0 before:h-[3px] before:content-[''] before:transition-all before:duration-500 before:transform before:scale-0 before:bg-primary">Prototipo {{ index + 1}}</button>
+                <button class="xl:text-2xl lg:text-xl sm:text-lg text-sm font-bold relative flex justify-center w-full px-[10px] pb-5 xl:pb-7 cursor-pointer uppercase text-black border-b-[3px] border-[#D0CDCB] bg-transparent before:absolute before:z-10 before:right-0 before:-bottom-[3px] before:left-0 before:h-[3px] before:content-[''] before:transition-all before:duration-500 before:transform before:scale-0 before:bg-primary">{{ item.name.length >= 12 ? item.name.slice(0, 12) + '...' : item.name }}</button>
             </li>
         </ul>
 
@@ -24,8 +24,8 @@
                                     <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0">M2 terreno<span>{{item.mlot}}</span></li>
                                     <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0">Habitaciones<span>{{item.bedrooms}}</span></li>
                                     <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0">Baños<span>{{item.bathrooms}}</span></li>
-                                    <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0 font-bold">Precio venta<span class="redcolor font-bold">$ {{ Number(item.price).toLocaleString() }} {{ item.currency }}</span></li>
-                                    <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0 font-bold">Precio renta<span class="redcolor font-bold">$ {{ Number(item.pricer).toLocaleString() }} {{ item.currencyr }}</span></li>
+                                    <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0 font-bold">Precio venta<span  style="color: #01569f;" class="font-bold">$ {{ Number(item.price).toLocaleString() }} {{ item.currency }}</span></li>
+                                    <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0 font-bold">Precio renta<span  style="color: #01569f;" class="font-bold">$ {{ Number(item.pricer).toLocaleString() }} {{ item.currencyr }}</span></li>
                                 </ul>
                                 <div class="floor-plan-buttons">
                                     <ButtonDefault 
@@ -36,7 +36,7 @@
                                     <ButtonDefault 
                                         :btnLink="'/booking'"
                                         :btnClass="'btn-md min-w-[205px] btn text-center btn-transparent btn-outline-black btn-hover-primary'"
-                                        :btnText="'Explorar 3d vR'"
+                                        :btnText="'Recorrido Virtual'"
                                         :btnIcon="'fi fi-model'"
                                     />
                                 </div>

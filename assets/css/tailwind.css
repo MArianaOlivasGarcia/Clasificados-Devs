@@ -7,7 +7,7 @@
         scroll-behavior: smooth;
     }
     body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Open Sans', sans-serif !important;
         font-weight: 400;
         font-size: 15px;
         color: #515151;
@@ -19,7 +19,7 @@
     h4,
     h5,
     h6 {
-        font-family: "Inter", sans-serif;
+        font-family: 'Open Sans', sans-serif !important;
         font-weight: 700;
         line-height: 1.25;
         margin-top: 0;
