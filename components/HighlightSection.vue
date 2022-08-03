@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-x-12 -mb-8">
-        <div v-for="(ai, index) in ( showMore ? newAmenities : newAmenities.slice(0, 6))" :key="index" class="highlight group">
+        <div v-for="(ai, index) in ( showAmenities )" :key="index" class="highlight group">
             <div class="highlight-icon relative z-10 flex overflow-hidden items-center justify-center w-[85px] h-[85px] transition-all duration-500 text-primary rounded-[50%] bg-primary bg-opacity-[0.05] before:content-[''] before:absolute before:-z-10 before:top-0 before:right-0 before:bottom-0 before:left-0 before:transition-all before:duration-500 before:transform before:opacity-0 before:ruonded-[50%] before:bg-primary group-hover:before:transform group-hover:before:opacity-100 group-hover:before:rounded-full group-hover:text-white">
                 <span :class="
                     ai.value == 'Amueblado' ? 'text-[40px] icon-armchair' : 
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-        <p style="text-align: end; margin-top: 10px; font-weight: bold; cursor:pointer;">Ver más...</p>
+        <p  v-on:click="changeShowMore( !showMore )" style="text-align: end; margin-top: 10px; font-weight: bold; cursor:pointer;">Ver más...</p>
 </div>
 </template>
 
@@ -114,12 +114,19 @@ export default {
         data() {
             return {
                 newAmenities: [],
+                showAmenities: [],
                 showMore: false
             }
         },
         methods: {
             changeShowMore( value ) {
-                this.showAmenities = value;
+                this.showMore = value;
+
+                if ( this.showMore ) {
+                    this.showAmenities = this.newAmenities;
+                } else {
+                    this.showAmenities = this.newAmenities.slice(0, 6)
+                }
             }
         },
         created() {
@@ -139,6 +146,12 @@ export default {
                         this.newAmenities.push({value: key2, interior: false});
                     }
                 }   
+            }
+
+            if ( this.newAmenities.length < 6 ) {
+                this.showAmenities = this.newAmenities;
+            } else {
+                this.showAmenities = this.newAmenities.slice(0,6)
             }
 
 
