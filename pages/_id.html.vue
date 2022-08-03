@@ -3,20 +3,38 @@
 
         <!-- Header Section Start -->
         <div class="absolute top-0 left-0 right-0 z-[999]" :class="{'is-sticky': isSticky}">
-            <div class="container-fluid mx-auto" style="background-color: #01569f;">
-                <div class="flex justify-between items-center">
-                    <div class="flex items-center">
+            <div class="container-fluid mx-auto" style="background-color: #01569f; height: 4rem;">
+                <div class="flex  items-center" style="justify-content: space-evenly;">
+                    <div class="flex items-center" style="height: 4rem;">
                         <Logo class="sm:max-w-[180px] max-w-[150px] mr-20 2xl:mr-[180px] py-[20px]" logLink="/"/>
+
+                        <input 
+                            type="text" 
+                            v-model="inputSearch"
+                            class="form-control" 
+                            style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; padding: 5px 10px;"
+                            placeholder="¿Qué deseas buscar?">
+                        <a  :href="'https://clasificadoscontacto.com/busqueda/general/buscar-por-' + inputSearch.normalize('NFD')
+			.replace(/,/g, '')
+			.replace(/[\u0300-\u036f]/g, '')
+			.replace(/ /g, '-')
+			.replace(/:/g, '')
+			.replace('.', '')
+			.replace('/', '')
+			.replace(/[/]/g, '')
+			.toLowerCase() + '.html' " class="searchIcon" style="margin-right: 4rem; "><i class="fa-solid fa-magnifying-glass"></i></a>
+
+
                         <MainMenu :textClass="'text-white sticky-height'" />
                     </div>
                     <div class="flex items-center">
-                        <ButtonDefault 
+                        <!-- <ButtonDefault 
                             :btnLink="'/contact'"
                             :btnClass="'btn-sm btn btn-hover-primary btn-outline-light'"
                             :btnText="'Agendar una visita'"
                             :btnClassParent="'flex'"
                             class="hidden sm:inline-flex"
-                        />
+                        /> -->
 
                         <div class="lg:hidden block leading-[1rem] ml-[10px] sm:ml-[15px]">
                             <button class="overflow-hidden bg-transparent h-[18px] relative w-[26px]" @click="mobiletoggleClass('addClass', 'show-mobile-menu')">
@@ -49,7 +67,7 @@
         <!-- Funfact Section End -->
 
         <!-- About Section Start -->
-        <div class="bg-themedark relative before:content-[''] before:absolute before:top-full before:left-0 before:w-full before:h-[50px] md:before:h-[70px] lg:before:h-[133px] mb-[50px] md:mb-[70px] lg:mb-[133px] before:bg-no-repeat before:bg-center before:bg-cover before:bg-[url('/images/shapes/about.png')]">
+        <div class="bg-themedark relative before:content-[''] before:absolute before:top-full before:left-0 before:w-full before:h-[50px] md:before:h-[70px] lg:before:h-[133px] mb-[50px] md:mb-[70px] lg:mb-[133px] before:bg-no-repeat before:bg-center before:bg-cover before:bg-[url('/images/banner.png')]">
             <AboutHometwo :dev="dev"/>
         </div>
         <!-- About Section End -->
@@ -66,7 +84,7 @@
                         titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
                     />
                     <!-- Section Title End -->
-                    <TabStyleTwo :prototypes="dev.prototipos"/>
+                    <TabStyleTwo :prototypes="dev.prototipos" :v="$v" :formWhats="formWhats" :folio="dev.folio"/>
                 </div>
             </div>
         </div>
@@ -84,7 +102,7 @@
                     titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
                 />
                 <!-- Section Title End -->
-                <GallerySliderMain/>
+                <GallerySliderMain :images="dev.images"/>
             </div>
         </div>
         <!-- Galeria End -->
@@ -112,42 +130,6 @@
         <!--Amenidades End -->
 
         
-
-        
-
-        <!-- Testimonial Section Start -->
-        <!-- <div class="container-fluid">
-            <div class="section-padding">
-                <SectionTitle
-                    secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
-                    subTitle="Testimonials"
-                    title="What Neighbor Says"
-                    titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase"
-                />
-                <TestimonialTwo/>
-            </div>
-        </div> -->
-        <!-- Testimonial Section End -->
-
-
-        
-
-
-        <!-- Location State Section Start -->
-        <!-- <div class="bg-themedark relative before:content-[''] before:absolute before:bottom-full before:left-0 before:w-full before:h-[50px] md:before:h-[70px] lg:before:h-[133px] mt-[50px] md:mt-[70px] lg:mt-[133px] before:bg-no-repeat before:bg-center before:bg-cover before:bg-[url('/images/shapes/location.png')]">
-            <div class="container-fluid">
-                <div class="section-padding pb-0">
-                    <SectionTitle
-                        secTionMargin="2xl:pb-[85px] xl:pb-[70px] lg:pb-[60px] pb-[30px] text-center"
-                        subTitle="Testimonials"
-                        title="What Neighbor Says"
-                        titleClass="lg:mt-10 md:mt-[30px] mt-5 font-play text-[26px] sm:text-[36px] md:text-[44px] lg:text-[50px] xl:text-[54px] 2xl:text-7xl font-normal uppercase text-white"
-                    />
-                </div>
-            </div>
-            <LocationStateTwo/>
-        </div> -->
-        <!-- Location State Section End -->
 
         <!--  Contact Section Start -->
         <div class="container-fluid">
@@ -194,6 +176,13 @@
         <!-- Footer Section Start -->
         <FooterSectionTwo/>
         <!-- Footer Section End -->
+
+        <WhatsForm 
+            v-if="showFormWhats" 
+            :formWhats="formWhats"
+            :v="$v"
+            :dev="dev"
+        />
 
     </div>
 </template>
@@ -249,6 +238,21 @@ export default {
           message: {
               required,
           },
+        },
+        formWhats: {
+          name: {
+              required,
+          },
+          phone: {
+              required,
+          },
+          email: {
+              email,
+              required,
+          },
+          message: {
+              required,
+          },
         }
     },
     components: {
@@ -278,6 +282,13 @@ export default {
                 phone: '',
                 message: ''
             },
+            formWhats: {
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
+            },
+            inputSearch: ''
         }
     },
     methods: {
@@ -289,7 +300,7 @@ export default {
             } else {
                 el.classList.remove(className);
             }
-        }
+        },
     },
     mounted(){
         window.addEventListener('scroll', () => {
@@ -300,6 +311,11 @@ export default {
                 this.isSticky = false
             }
         })
+    },
+    computed: {
+        showFormWhats () {
+            return this.$store.state.showFormWhats;
+        }
     }
 }
 </script>
@@ -313,4 +329,14 @@ export default {
 
     background: #01569F;
 }
+
+.searchIcon {
+        margin-right: 4rem;
+    padding: 5px 10px;
+    background: #F0E26B;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #01569F;
+}
+
 </style>

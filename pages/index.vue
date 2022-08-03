@@ -1,4 +1,5 @@
 <template>
+<div>
     <div>
         
         <!-- Header Section Start -->
@@ -150,6 +151,10 @@
         <FooterSection/>
         <!-- Footer Section End -->
 
+
+
+        </div>
+        <WhatsForm />
     </div>
 </template>
 

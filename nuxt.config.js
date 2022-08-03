@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ecostate - Vue Js Single Property Template',
+    title: 'Clasificados Contacto',
     htmlAttrs: {
       lang: 'en'
     },
@@ -15,11 +15,14 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800' },
       { rel: 'stylesheet', href: '/css/icomoon.css'},
 
-    ]
+    ],
+    script: [
+      { src: 'https://kit.fontawesome.com/2fff93d78d.js', crossorigin: 'anonymous' },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -29,6 +32,7 @@ export default {
     '@/assets/css/fontawesome.min.css',
     '~/assets/css/swiper.css'
   ],
+  
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -50,7 +54,7 @@ export default {
     },
     { src: '~/plugins/vue-vuelidate'},
     { src: '~/plugins/vue-googlemaps', ssr: false},
-
+    { src: '~/plugins/vue-tel-input' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

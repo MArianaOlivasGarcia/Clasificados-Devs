@@ -18,10 +18,10 @@
         </swiper>
             
         <div class="">
-            <button class="prevbtn swipper-arrow bg-[url('/images/shapes/swiper-prev.png')] bg-center bg-no-repeat h-[120px] w-[28px] -left-[2px] top-1/2 absolute newstyle-arrow -translate-y-1/2 z-99">
+            <button class="prevbtn swipper-arrow bg-center bg-no-repeat h-[120px] w-[28px] -left-[2px] top-1/2 absolute newstyle-arrow -translate-y-1/2 z-99">
                 <i class="fa fa-chevron-left"></i>
             </button>
-            <button class="nextbtn swipper-arrow bg-[url('/images/shapes/swiper-next.png')] bg-center bg-no-repeat h-[120px] w-[28px] -right-[2px] top-1/2 absolute newstyle-arrow -translate-y-1/2 z-99">
+            <button class="nextbtn swipper-arrow  bg-center bg-no-repeat h-[120px] w-[28px] -right-[2px] top-1/2 absolute newstyle-arrow -translate-y-1/2 z-99">
                 <i class="fa fa-chevron-right"></i>
             </button>
         </div>
@@ -38,6 +38,12 @@
             CoolLightBox,
             Swiper,
             SwiperSlide
+        },
+        props: {
+            images: {
+                type: Array,
+                required: true
+            }
         },
         data () {
             return {    
@@ -79,7 +85,8 @@
             }
         },
         mounted () {
-            this.items = this.projects.filter(project=> project.categories)
+            this.items = this.images;
+            console.log(this.items)
         }
     }
 </script>

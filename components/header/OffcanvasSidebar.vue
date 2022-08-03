@@ -6,7 +6,7 @@
             <div class="flex justify-between px-5 pb-5 items-center border-b-1 border-white border-opacity-[0.15]">
                 <div class="max-w-[180px]">
                     <n-link to="/">
-                        <img src="/images/logo/logo-light.svg" alt="Logo">
+                        <img src="/images/logo.png" alt="Logo">
                     </n-link>
                 </div>
                 <button class="grid h-5 w-5 relative group" @click="mobiletoggleClass('removeClass', 'show-mobile-menu')">

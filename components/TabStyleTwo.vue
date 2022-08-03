@@ -28,8 +28,9 @@
                                     <li class="text-lg relative flex justify-between py-3 text-black border-b-1 border-[#cfcfd4] last:border-b-0 font-bold">Precio renta<span  style="color: #01569f;" class="font-bold">$ {{ Number(item.pricer).toLocaleString() }} {{ item.currencyr }}</span></li>
                                 </ul>
                                 <div class="floor-plan-buttons">
-                                    <ButtonDefault 
-                                        :btnLink="'/booking'"
+                                    <ButtonDefault
+                                        :clickMethod="showWhats"
+                                        :argumentMethod="item.prototypeid" 
                                         :btnClass="'btn-md min-w-[205px] text-center btn btn-primary btn-hover-dark'"
                                         :btnText="'¡Estoy interesado!'"
                                     />
@@ -62,7 +63,19 @@
             prototypes: {
                 required: true,
                 type: Array
-            }
+            },
+            formWhats: {
+                type: Object,
+                required: true
+            },
+            v: {
+                type: Object,
+                required: true
+            },
+            folio: {
+                type: String,
+                required: true
+            },
         },
         created() {
             console.log(this.prototypes)
@@ -82,6 +95,17 @@
         methods: {
             activate(index) {
                 this.active = index;
+            },
+            showWhats( ){
+
+                if ( this.$store.state.showFormWhats ) {
+                    this.$store.commit('setShowFormWhats', false)
+                }
+
+                this.$store.commit('setShowFormWhats', true)
+                this.$store.commit('setPrototypeId', this.prototypes[this.active].prototypeid)
+                this.$store.commit('setFolioDev', this.folio )
+
             }
         }
     }

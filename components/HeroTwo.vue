@@ -17,11 +17,12 @@
                             <img class="w-full h-full object-cover" src="images/shapes/price-box.png" alt="Pricing-Shape">
                         </div> -->
                         <h6 class="block text-base font-semibold mb-7 text-[30px] sm:mb-12 uppercase text-white">Desde</h6>
-                        <h2 class="block font-play text-[54px] sm:text-[84px] font-normal leading-[1.071] relative mb-5 sm:mb-6 text-[#f2e113]">$ {{ dev.precmin }} {{ dev.currency }}</h2>
+                        <h2 class="block font-play text-[54px] sm:text-[60px] font-normal leading-[1.071] relative mb-5 sm:mb-6 text-[#f2e113]">$ {{ dev.precmin == 0 ? '0' : Number(dev.precmin).toLocaleString() }} {{ dev.currency }}</h2>
                         <h3 class="sm:text-[30px] text-xl font-normal relative block mb-12 sm:mb-[53px] text-white">Impuesto Incluido</h3>
                         <div class="block w-full mb-9 sm:mb-12">
+                            
                             <ButtonDefault 
-                                :btnLink="'/contact'"
+                                :clickMethod="showWhats"
                                 :btnClass="'min-h-[50px] md:min-h-[60px] lg:min-h-[70px] py-2 sm:py-5 btn relative overflow-hidden h-[54px] lg:h-[60px] px-[30px] lg:px-[40px] text-base sm:text-[18px] font-bold btn-primary flex items-center justify-center btn-hover-light w-full'"
                                 :btnText="'Solicitar disponibilidad'"
                                 :btnIcon="'!hidden'"
@@ -48,12 +49,17 @@
                 required: true
             }
         },
-        components: {
-        },
-        data() {
-            return {
+        methods: {
+            showWhats() {
+                this.$store.commit('setShowFormWhats', true);
+                this.$store.commit('setFolioDev', this.dev.folio);
+                this.$store.commit('setPrototypeId', '');
+
+                console.log(this.$store.state.folioDev)
+                console.log(this.$store.state.prototipoId)
             }
-        }
+        },
+        
     }
 </script>
 

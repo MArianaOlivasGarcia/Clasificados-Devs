@@ -6,22 +6,7 @@
         <div class="content-bd">
             <div class="tab-content">
                 <div v-if="currentTab === 0">
-                    <GallerySliderAll/>
-                </div>
-                <div v-if="currentTab === 1">
-                    <GallerySliderOne/>
-                </div>
-                <div v-if="currentTab === 2">
-                    <GallerySliderTwo/>
-                </div>
-                <div v-if="currentTab === 3">
-                    <GallerySliderThree/>
-                </div>
-                <div v-if="currentTab === 4">
-                    <GallerySliderFour/>
-                </div>
-                <div v-if="currentTab === 5">
-                    <GallerySliderFive/>
+                    <GallerySliderAll :images="images"/>
                 </div>
             </div>
         </div>
@@ -32,11 +17,12 @@
     export default {
         components: {
             GallerySliderAll: () => import('@/components/gallery/GallerySliderAll'),
-            GallerySliderOne: () => import('@/components/gallery/GallerySliderOne'),
-            GallerySliderTwo: () => import('@/components/gallery/GallerySliderTwo'),
-            GallerySliderThree: () => import('@/components/gallery/GallerySliderThree'),
-            GallerySliderFour: () => import('@/components/gallery/GallerySliderFour'),
-            GallerySliderFive: () => import('@/components/gallery/GallerySliderFive'),
+        },
+        props: {
+            images: {
+                type: Array,
+                required: true
+            }
         },
         data () {
             return {
@@ -44,6 +30,9 @@
                 // tabs: ['Todos', 'Living Room', 'Bed Room', 'Bath Room', 'Basement', 'Kitchen']
             }
         },
+        created() {
+            console.log(this.images)
+        }
     }
 </script>
 

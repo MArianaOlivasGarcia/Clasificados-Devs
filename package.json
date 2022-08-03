@@ -22,6 +22,7 @@
     "vue-disqus": "^4.0.1",
     "vue-observe-visibility": "^1.0.0",
     "vue-server-renderer": "^2.6.14",
+    "vue-tel-input": "^5.1.0",
     "vue-template-compiler": "^2.6.14",
     "vue2-google-maps": "^0.10.7",
     "vuejs-datepicker": "^1.6.2",

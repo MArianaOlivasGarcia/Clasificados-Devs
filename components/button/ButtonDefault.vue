@@ -1,13 +1,14 @@
 <template>
     <div :class="btnClassParent">
-        <n-link :to="btnLink" :class="btnClass"> <i :class="btnIcon"></i> {{btnText}}</n-link>
+        <button v-on:click="clickMethod()" :class="btnClass"> <i :class="btnIcon"></i> {{btnText}}</button>
     </div>
 </template>
 <script>
 export default {
     props: {
-        btnLink: String,
         btnClass: String,
+        clickMethod: Function,
+        argumentMethod: String,
         btnClassParent: String,
         btnText: String,
         btnIcon: String
