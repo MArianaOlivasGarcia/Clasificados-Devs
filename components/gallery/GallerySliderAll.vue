@@ -10,7 +10,7 @@
             <swiper-slide v-for="(item, imageIndex) in items" :key="imageIndex">
 
                 <div @click="index = imageIndex" class="relative block overflow-hidden bg-primary group cursor-pointer">
-                    <img class="group-hover:opacity-40 transition duration-500 group-hover:transform w-full" :src="`${item.image}`" alt="Thumb">
+                    <img class="group-hover:opacity-40 transition duration-500 group-hover:transform w-full" :src="`https://clasificadoscontacto.com${item.image}`" alt="Thumb">
                     <span class="text-xl video-icon absolute top-1/2 left-1/2 items-center justify-center w-20 md:w-[120px] h-20 md:h-[120px] -translate-x-1/2 -translate-y-1/2 text-white rounded-full bg-black/50 hidden" :class="item.videobtnshow"><i class="fa fa-play"></i></span>
                 </div>
 

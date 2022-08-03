@@ -12,7 +12,7 @@
                     </div>
                     <div class="flex items-center">
                         <ButtonDefault 
-                            :btnLink="'/contact'"
+                            :btnLink="'/desarrollo/fresno-towers_23.html'"
                             :btnClass="'btn-sm btn btn-hover-primary btn-outline-light'"
                             :btnText="'Schedule a visit'"
                             :btnClassParent="'flex'"
@@ -154,7 +154,6 @@
 
 
         </div>
-        <WhatsForm />
     </div>
 </template>
 
