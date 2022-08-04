@@ -1,5 +1,27 @@
 <template>
     <div>
+        
+        
+        <div class="inputSearch"  style="display: flex;">
+
+                        <input 
+                            type="text" 
+                            v-model="inputSearch"
+                            class="form-control" 
+                            style="border-top-left-radius: 10px; border-bottom-left-radius: 10px; padding: 5px 10px;"
+                            placeholder="¿Qué deseas buscar?">
+                        <a  :href="'https://clasificadoscontacto.com/busqueda/general/buscar-por-' + inputSearch.normalize('NFD')
+			.replace(/,/g, '')
+			.replace(/[\u0300-\u036f]/g, '')
+			.replace(/ /g, '-')
+			.replace(/:/g, '')
+			.replace('.', '')
+			.replace('/', '')
+			.replace(/[/]/g, '')
+			.toLowerCase() + '.html' " class="searchIcon" ><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
+
+
         <ul class='mobilemenu'>
             <li v-for='(link, i) in menuData' :key='i'>
                 <n-link class="mobilemenu_link text-white py-3 block pl-5" :to="link.url">
@@ -31,7 +53,8 @@ import menuData from "@/data/menudata.json";
     export default {
         data() {
             return {
-                menuData
+                menuData,
+                inputSearch: ''
             }
         },
         mounted() {
@@ -114,4 +137,20 @@ import menuData from "@/data/menudata.json";
             }
         }
     }
+
+
+    .inputSearch {
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+    }
+
+    .searchIcon {
+    padding: 5px 10px;
+    background: #F0E26B;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #01569F;
+}
+
 </style>

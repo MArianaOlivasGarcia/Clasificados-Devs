@@ -46,3 +46,8 @@
         @apply xl:py-120 lg:py-[100px] md:py-20 py-60;
     }
 }
+
+
+.vue-map-container.map-container {
+    height: 400px !important;
+}   

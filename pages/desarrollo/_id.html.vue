@@ -8,6 +8,8 @@
                     <div class="flex items-center" style="height: 4rem;">
                         <Logo class="sm:max-w-[180px] max-w-[150px] mr-20 2xl:mr-[180px] py-[20px]" logLink="/"/>
 
+                        <div class="inputSearch"  style="display: flex;">
+
                         <input 
                             type="text" 
                             v-model="inputSearch"
@@ -22,7 +24,8 @@
 			.replace('.', '')
 			.replace('/', '')
 			.replace(/[/]/g, '')
-			.toLowerCase() + '.html' " class="searchIcon" style="margin-right: 4rem; "><i class="fa-solid fa-magnifying-glass"></i></a>
+			.toLowerCase() + '.html' " class="searchIcon" ><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </div>
 
 
                         <MainMenu :textClass="'text-white sticky-height'" />
@@ -338,5 +341,17 @@ export default {
     border-top-right-radius: 10px;
     color: #01569F;
 }
+
+
+@media (max-width: 576px) { 
+    
+    .inputSearch {
+        display: none !important;
+    }
+
+ }
+
+
+
 
 </style>
