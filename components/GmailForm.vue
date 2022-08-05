@@ -2,8 +2,8 @@
   <div class="containerFab p-5">
     <p style="text-align: end;"><span v-on:click="closeForm()"><i style="cursor: pointer;" class="fa-solid fa-xmark fa-lg"></i></span></p>
 
-    <h4><i class="fa-brands fa-whatsapp fa-lg"></i>  Completa tus datos</h4>
-    <p>Te comunicaremos con uno de nuestros asesores.</p>
+    <h4><i class="fa-solid fa-envelope"></i> Completa tus datos</h4>
+    <p>Te pondremos en comunicación con uno de nuestros asesores.</p>
 
 
     <form id="contact-form"
@@ -14,27 +14,27 @@
             <input type="text" 
                 class="form-control" 
                 placeholder="Nombre completo"
-                v-model="formWhats.name"
-                @blur="v.formWhats.name.$touch()">
+                v-model="formGmail.name"
+                @blur="v.formGmail.name.$touch()">
             <small>
-                <span v-if=" !v.formWhats.name.required  &&
-                                v.formWhats.name.$dirty"
+                <span v-if=" !v.formGmail.name.required  &&
+                                v.formGmail.name.$dirty"
                     style="color: red;">El nombre es requerido.</span>
             </small>
         </div>
 
 
          <div class="col">
-            <label>Whatsapp<span style="color: red;">*</span></label>
+            <label>Teléfono<span style="color: red;">*</span></label>
             <vue-tel-input
                   class="form-control"
                   v-bind="telProps"
-                  v-model="formWhats.phone"
-                @blur="v.formWhats.phone.$touch()">
+                  v-model="formGmail.phone"
+                @blur="v.formGmail.phone.$touch()">
                 </vue-tel-input>
              <small>
-                    <span v-if=" !v.formWhats.phone.required  &&
-                                    v.formWhats.phone.$dirty"
+                    <span v-if=" !v.formGmail.phone.required  &&
+                                    v.formGmail.phone.$dirty"
                         style="color: red;">El teléfono es requerido.</span>
             </small>
         </div>
@@ -44,36 +44,36 @@
             <input type="email" 
                 class="form-control" 
                 placeholder="ejemplo@ejemplo.com"
-                v-model="formWhats.email"
-                @blur="v.formWhats.email.$touch()">
+                v-model="formGmail.email"
+                @blur="v.formGmail.email.$touch()">
             <small>
-                <span v-if=" !v.formWhats.email.required  &&
-                                v.formWhats.email.$dirty"
+                <span v-if=" !v.formGmail.email.required  &&
+                                v.formGmail.email.$dirty"
                     style="color: red;">El correo electrónico es requerido.</span>
             </small>
             <small>
-                <span v-if=" !v.formWhats.email.email  &&
-                                v.formWhats.email.$dirty"
+                <span v-if=" !v.formGmail.email.email  &&
+                                v.formGmail.email.$dirty"
                     style="color: red;">Correo electrónico inválido.</span>
             </small>
         </div>
 
         <div class="col">
-            <label>Message<span style="color: red;">*</span></label>
+            <label>Mensaje<span style="color: red;">*</span></label>
             <textarea rows="2" 
                 class="form-control" 
                 placeholder="Escribe tu mensaje aquí"
-                v-model="formWhats.message"
-                 @blur="v.formWhats.message.$touch()"></textarea>
+                v-model="formGmail.message"
+                 @blur="v.formGmail.message.$touch()"></textarea>
              <small>
-                    <span v-if=" !v.formWhats.message.required  &&
-                                    v.formWhats.message.$dirty"
+                    <span v-if=" !v.formGmail.message.required  &&
+                                    v.formGmail.message.$dirty"
                         style="color: red;">El mensaje es requerido.</span>
                 </small>
         </div>
 
         <div class="col">
-            <button class="btn-whats" >Iniciar Chat</button>
+            <button class="btn-whats" >Iniciar</button>
         </div>
 
     </form>
@@ -85,7 +85,7 @@
 import Swal from 'sweetalert2';
 export default {
     props: {
-        formWhats: {
+        formGmail: {
             type: Object,
             required: true
         },
@@ -126,13 +126,12 @@ export default {
     },
     methods: {
         closeForm() {
-            this.$store.commit('setShowFormWhats', false);
+            this.$store.commit('setShowFormGmail', false);
         },
         async initChat() {
 
-
-            if ( this.v.formWhats.$invalid ) {
-                this.v.formWhats.$touch()
+            if ( this.v.formGmail.$invalid ) {
+                this.v.formGmail.$touch()
                 return 
             } 
 
@@ -140,13 +139,12 @@ export default {
 
 
             const data = {
-                ...this.formWhats,
-                productId: this.$store.state.folioDev,
-                prototype: this.$store.state.prototipoId
+                ...this.formGmail,
+                productId: this.dev.folio
             }
 
             const success = await this.$store.dispatch('sendToWhatsApp', data)
-            
+                
             if ( !success ) {
                 Swal.fire({
                     icon: 'error',
@@ -156,14 +154,13 @@ export default {
                 return;
             } 
 
-            this.$store.commit('setShowFormWhats', false)
-            window.open(`https://wa.me/+52${ this.dev.user.cellphone.split('+52')[1].replace(/ /g, '') }?text=${ this.formWhats.message  } - https://clasificadoscontacto.com${this.$route.path}`, '_blank');
+            this.$store.commit('setShowFormGmail', false);
             
         }
     },
     created() {
         console.log(this.v)
-        console.log(this.formWhats)
+        console.log(this.formGmail)
     }
 }
 </script>
@@ -181,7 +178,7 @@ export default {
     }
 
     i {
-        color: #23d366 ;
+        color: #C93737 ;
     }
 
     p { 
@@ -206,7 +203,7 @@ export default {
     }
 
     .btn-whats {
-        background-color: #23d366;
+        background-color: #C93737;
         padding: 8px 10px;
         border-radius: 10px !important;
         color: white;

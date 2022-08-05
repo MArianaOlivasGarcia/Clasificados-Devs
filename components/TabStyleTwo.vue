@@ -102,6 +102,7 @@
                     this.$store.commit('setShowFormWhats', false)
                 }
 
+                this.$store.commit('setShowFormGmail', false)
                 this.$store.commit('setShowFormWhats', true)
                 this.$store.commit('setPrototypeId', this.prototypes[this.active].prototypeid)
                 this.$store.commit('setFolioDev', this.folio )

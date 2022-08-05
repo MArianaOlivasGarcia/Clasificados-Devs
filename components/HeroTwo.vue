@@ -52,6 +52,7 @@
         methods: {
             showWhats() {
                 this.$store.commit('setShowFormWhats', true);
+                this.$store.commit('setShowFormGmail', false);
                 this.$store.commit('setFolioDev', this.dev.folio);
                 this.$store.commit('setPrototypeId', '');
 

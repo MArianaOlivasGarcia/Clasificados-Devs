@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="position: relative;">
 
         <!-- Header Section Start -->
         <div class="absolute top-0 left-0 right-0 z-[999]" :class="{'is-sticky': isSticky}">
@@ -187,6 +187,19 @@
             :dev="dev"
         />
 
+        
+        <GmailForm 
+            v-if="showFormGmail" 
+            :formGmail="formGmail"
+            :v="$v"
+            :dev="dev"
+        />
+
+
+        <div class="btnFab" v-on:click="openFormGmail( true )">
+            <img width="35" src="https://img.icons8.com/color/344/gmail--v1.png" alt="">
+        </div>
+
     </div>
 </template>
 
@@ -256,6 +269,21 @@ export default {
           message: {
               required,
           },
+        },
+        formGmail: {
+          name: {
+              required,
+          },
+          phone: {
+              required,
+          },
+          email: {
+              email,
+              required,
+          },
+          message: {
+              required,
+          },
         }
     },
     components: {
@@ -291,6 +319,12 @@ export default {
                 phone: '',
                 message: ''
             },
+            formGmail: {
+                name: '',
+                email: '',
+                phone: '',
+                message: ''
+            },
             inputSearch: ''
         }
     },
@@ -304,6 +338,10 @@ export default {
                 el.classList.remove(className);
             }
         },
+        openFormGmail( value ) {
+            this.$store.commit('setShowFormGmail', value);
+            this.$store.commit('setShowFormWhats', false);
+        }
     },
     mounted(){
         window.addEventListener('scroll', () => {
@@ -318,6 +356,9 @@ export default {
     computed: {
         showFormWhats () {
             return this.$store.state.showFormWhats;
+        },
+        showFormGmail () {
+            return this.$store.state.showFormGmail;
         }
     }
 }
@@ -352,6 +393,17 @@ export default {
  }
 
 
-
+.btnFab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    padding: 10px;
+    border-radius: 100%;
+    background: #F4F1EF;
+    cursor: pointer;
+    border: 2px solid #E84F4B;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 
 </style>

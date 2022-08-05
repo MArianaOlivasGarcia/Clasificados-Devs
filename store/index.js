@@ -6,6 +6,7 @@ export const state = () => ({
     contactWhats: '?site=MWM2OW1oTWhXVG9JcnlNNThYL1gwSHlZRFEyTXRzZHFXeWYzT3QwR1BWRT0=',
 
     showFormWhats: false,
+    showFormGmail: false,
     folioDev: '',
     prototipoId: ''
 })
@@ -73,6 +74,9 @@ export const actions = {
 export const mutations = {
     setShowFormWhats(state, value){
         state.showFormWhats = value;
+    },
+    setShowFormGmail(state, value){
+        state.showFormGmail = value;
     },
     setFolioDev(state, value){
         state.folioDev = value;
