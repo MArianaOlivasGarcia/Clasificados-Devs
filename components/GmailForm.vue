@@ -73,7 +73,7 @@
         </div>
 
         <div class="col">
-            <button class="btn-whats" >Iniciar</button>
+            <button class="btn-whats" :disabled="isLoading">Iniciar</button>
         </div>
 
     </form>
@@ -130,8 +130,12 @@ export default {
         },
         async initChat() {
 
+
+
             if ( this.v.formGmail.$invalid ) {
                 this.v.formGmail.$touch()
+                console.log('Formulario invalido')
+                console.log(this.v.formGmail)
                 return 
             } 
 
@@ -155,7 +159,11 @@ export default {
             } 
 
             this.$store.commit('setShowFormGmail', false);
+            this.isLoading = false
+
+            window.open(`https://mail.google.com/mail/u/0/?fs=1&to=${ this.dev.user.email }&su=Clasificados%20Contacto&body=${this.formGmail.message}&tf=cm`, '_blank');
             
+            // https://mail.google.com/mail/u/0/?fs=1&to=someone@example.com&su=Clasificados%20Contacto&body=BODY&bcc=someone.else@example.com&tf=cm
         }
     },
     created() {
