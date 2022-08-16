@@ -9,7 +9,7 @@
                     <!-- <div class="herotwo-signature">
                         <img src="images/hero/hero-2-signature.png" alt="Signature">
                     </div> -->
-                    <h4 class="herotwo-location"><i class="fi fi-maps-and-flags"></i>{{ dev.city }}, {{ dev.state }}, {{ dev.country }}</h4>
+                    <h4 class="herotwo-location"><i class="fa-solid fa-location-dot"></i>{{ dev.city }}, {{ dev.state }}, {{ dev.country }}</h4>
                 </div>
                 <div class="lg:w-1/2 w-full flex lg:justify-end">
                     <div class="relative z-10 block w-full max-w-[490px] p-10 sm:p-[70px]">

@@ -18,19 +18,21 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800' },
       { rel: 'stylesheet', href: '/css/icomoon.css'},
+      { rel: 'stylesheet', href: '/css/tailwind.css'},
+      { rel: 'stylesheet', href: '/css/swiper.css'},
 
     ],
     script: [
       { src: 'https://kit.fontawesome.com/2fff93d78d.js', crossorigin: 'anonymous' },
+
     ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/css/tailwind.css',
-    '@/assets/css/flaticon.css',
-    '@/assets/css/fontawesome.min.css',
-    '~/assets/css/swiper.css'
+  //   '@/assets/css/tailwind.css',
+  //   '@/assets/css/flaticon.css',
+  //   '~/assets/css/swiper.css'
   ],
   
 
