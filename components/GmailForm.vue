@@ -185,6 +185,19 @@ export default {
         box-shadow: 2.4px 2.4px 3.2px rgba(0,0,0,.09);
     }
 
+    @media (max-width: 576px) { 
+        .containerFab {
+            width: 75%;
+        }
+    }
+
+    @media (min-width: 576px) and  (max-width: 768px) { 
+        .containerFab {
+            width: 50%;
+        }
+     }
+
+
     i {
         color: #C93737 ;
     }

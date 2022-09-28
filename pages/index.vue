@@ -79,7 +79,7 @@
 
         <!-- Floor Plan Section Start -->
         <div class="bg-light">
-            <div class="container-fluid">
+            <div class="container-fluidd">
                 <div class="section-padding pb-0 lg:pb-[100px] xl:pb-0">
                     <SectionTitle
                         secTionMargin="mb-10"
