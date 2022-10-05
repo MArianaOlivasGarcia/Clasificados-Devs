@@ -17,9 +17,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href:'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800' },
-      { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/icomoon.css'},
-      { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/tailwind.css'},
-      { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/swiper.css'},
+      // { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/icomoon.css'},
+      // { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/tailwind.css'},
+      // { rel: 'stylesheet', href: 'https://clasificadoscontacto.com/devs/css/swiper.css'},
 
     ],
     script: [
@@ -30,9 +30,9 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-  //   '@/assets/css/tailwind.css',
-  //   '@/assets/css/flaticon.css',
-  //   '~/assets/css/swiper.css'
+    '@/assets/css/tailwind.css',
+    '@/assets/css/flaticon.css',
+    '~/assets/css/swiper.css'
   ],
   
 
